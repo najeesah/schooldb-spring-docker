@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Call JavaScript Function on Page Load</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="group.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body vertical-align="top" onload="getGroupProfile()">
+
+    <table align="top">
+        <tr>
+            <td>
+                <button onclick="getGroupProfile()">Get Group Profile</button>
+            </td>
+            <td>
+                <button onclick="getGroupUsers()">Get Group Users</button>
+            </td>
+            <td>
+                <button onclick="getGroupAccounts()">Get Group Accounts</button>
+            </td>
+            <td>
+                <button onclick="getGroupSubs()">Get Group Subs</button>
+            </td>
+            <td>
+                <button onclick="getGroupMemberships()">Get Group Memberships</button>
+            </td>
+        </tr>
+    </table>
+
+<!--body onload="bodyOnLoad();"-->
+</body>
+</html>

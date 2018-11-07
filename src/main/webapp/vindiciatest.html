@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha512.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/x64-core.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha512.js"></script>-->
+</head>
+<body>
+
+<!--<script>
+    var otl_hmac_key = "A39485F85039D394059B948390";
+    var vin_session_id = "CC403930495";
+    var vin_session_hash = CryptoJS.HmacSHA512(vin_session_id + "#POST#/payment_methods", otl_hmac_key);
+    $('#vin_session_id type1').val(vin_session_id);
+    $('#vin_session_hash1').val(vin_session_hash);
+</script>-->
+
+<form id="mainForm" id="mainForm"  name="mainForm" class="form-horizontal" method="post">
+    <!--input name="vin_session_id" id="vin_session_id type1" type="hidden" /-->
+    <!--input name="vin_session_hash" id="vin_session_hash1" type="hidden" /-->
+    <input name="vin_session_id" value="CC403930495" type="hidden" />
+    <input name="vin_session_hash" value="4812242031705a2413c6363067298bb3023b474084d11614c89a089f6ba35ec9" type="hidden" />
+    <input type="text" id="vin_account_holder" name="vin_account_holder" placeholder="Enter Cardholder Name" value=""/>
+    <input type="text" id="vin_billing_address_line1" name="vin_billing_address_line1" placeholder="Enter Address Line 1" value=""/>
+
+    <input type="text" id="vin_billing_address_line2" name="vin_billing_address_line2" placeholder="Enter Address Line 2" value=""/>
+    <input type="text" id="vin_billing_address_line3" name="vin_billing_address_line3" placeholder="Enter Address Line 3" value=""/>
+    <input type="text" id="vin_billing_address_city" name="vin_billing_address_city" placeholder="Enter City" value=""/>
+    <input type="text" id="vin_billing_address_district" name="vin_billing_address_district" placeholder="Enter State" value=""/>
+    <input type="text" id="vin_billing_address_postal_code" name="vin_billing_address_postal_code" placeholder="Enter Cardholder Name" value=""/>
+    <input type="text" id="vin_billing_address_country" name="vin_billing_address_country" placeholder="Enter Country" value=""/>
+    <input type="text" id="vin_billing_address_phone" name="vin_billing_address_phone" placeholder="Enter Phone Number" value=""/>
+    <div id="vin_credit_card_account"></div>
+    <div id="vin_credit_card_expiration_date"></div>
+    <div id="vin_credit_card_cvn"></div>
+    <button type="submit" form="mainForm" value="Submit" name="submit">Submit</button>
+</form>
+
+
+<script src="https://secure.vindicia.com/pmt/vindicia.js"></script>
+<script> vindicia.setup({
+// Options
+    formId: "mainForm", // dom element of form
+    vindiciaAuthId: "aXdjbF9vbmVfdGltZV9sb2dpbjpBTG5JWnRjZA==",
+    // Authorization: Basic header"
+    vindiciaServer: "secure.prodtest.sj.vindicia.com", // to load the iframes from
+    vindiciaRestServer: "api.prodtest.vindicia.com", // REST server to submit JSON to
+    hostedFields: {
+        cardNumber: {
+            selector: "#vin_credit_card_account",
+            placeholder: "Enter Credit Card Number" // optional field
+        }
+        ,
+        expirationDate: {
+            selector: "#vin_credit_card_expiration_date", placeholder:
+                "Expiration Date MM/YY", // optional field format: "MM/YY" // optional, default is MM/YY
+        }
+        ,
+        cvn: {
+            selector: "#vin_credit_card_cvn",
+            placeholder:
+                "Enter CVV" // optional field
+        },
+        styles: { // optional
+            "input": {
+                "width":
+                    "100%",
+                "font-family":
+                    "'Helvetica Neue',Helvetica,Arial,sans-serif",
+                "font-size":
+                    "14px",
+                "color":
+                    "#555",
+                "height":
+                    "34px",
+                "padding":
+                    "6px 12px",
+                "margin":
+                    "5px 0px",
+                "line-height":
+                    "1.42857",
+                "border":
+                    "1px solid #ccc",
+                "border-radius":
+                    "4px",
+                "box-shadow":
+                    "0px 1px 1px rgba(0,0,0,0.075) inset",
+                "-webkit-transition":
+                    "border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s",
+                "transition":
+                    "border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s",
+            },
+            ":focus":
+                { // optional
+                    "border-color":
+                        "#66afe9",
+                    "outline":
+                        "0",
+                    "-webkit-box-shadow":
+                        "inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175,233, .6)",
+                    "box-shadow": "inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)"
+                },
+            ".valid":
+                { // optional
+                    "border-color":
+                        "#228B22",
+                }
+            ,
+            ".notValid":
+                { // optional "border-color": "#ff0000",
+                },
+// custom width
+            "@media (min-width: 600px) and (max-width: 800px)":
+                {
+                    "input":
+                        {
+                            "font-size":
+                                "16pt"
+                        }
+                }
+        },
+    },
+    iframeHeightPadding: 2, // optional
+    onSubmitEvent:
+
+        function (myform) {
+            return merchantValidate(myform);
+        }
+
+    ,
+    onSubmitCompleteEvent: function (data) {
+        $('#message').html('submitted OK, vid ' + data.detail.vid);
+        return;
+    }
+    ,
+    onSubmitCompleteFailedEvent: function (data) {
+        console.log(data.detail.status);
+        if (data.detail.error) {
+            console.log(data.detail.error);
+        }
+        return true;
+    }
+    ,
+    onVindiciaFieldEvent: function (event) { // optional
+        if (event.detail.fieldType == 'cardNumber') {
+            setCardImage(event.detail.cardType); // bright or dim the card logo
+        }
+        if (event.detail.fieldType == 'expirationDate') {
+            if (!event.detail.isValid) {
+                console.log('vindiciaEvent expirationDate not valid');
+            }
+        }
+        if (event.detail.fieldType == 'cvn') {
+            if (!event.detail.isValid) {
+                console.log('vindiciaEvent cvn not valid');
+            }
+            console.log('cvn length ' + event.detail.dataLength);
+        }
+    }
+})
+;
+
+// optional function shown being used above
+function setCardImage(type) {
+// use a sprite to display one credit card logo brightly with JQuery
+    if (type == 'visa' || type == 'visa_electron') {
+        $('#ccTypeImage').css('background-position', '0 -23px');
+    }
+    else if (type == 'mastercard' || type == 'maestro') {
+        $('#ccTypeImage').css('background-position', '0 -46px');
+    }
+    else if (type == 'amex') {
+        $('#ccTypeImage').css('background-position', '0 -69px');
+    }
+    else if (type == 'discover') {
+        $('#ccTypeImage').css('background-position', '0 -92px');
+    }
+    else {
+        $('#ccTypeImage').css('background-position', '0 0');
+    }
+}
+</script>
+
+
+
+
+
+</body>
+</html>

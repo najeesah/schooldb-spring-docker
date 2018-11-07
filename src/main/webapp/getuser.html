@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Call JavaScript Function on Page Load</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="user.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body vertical-align="top" onload="getUserProfile()">
+<table align="top" class="style1">
+    <tr>
+        <td>
+            <button onclick="getUserProfile()">Get User Profile</button>
+        </td>
+        <td>
+            <button onclick="getUserGroups()">Get User Groups</button>
+        </td>
+        <td>
+            <button onclick="getUserAccounts()">Get User Accounts</button>
+        </td>
+        <td>
+            <button onclick="getUserSubs()">Get User Subs</button>
+        </td>
+        <td>
+            <button onclick="getUserMemberships()">Get User Memberships</button>
+        </td>
+        <td>
+            <button onclick="getUserRuntimes()">Get User Runtimes</button>
+        </td>
+    </tr>
+</table>
+<!--body onload="bodyOnLoad();"-->
+</body>
+</html>

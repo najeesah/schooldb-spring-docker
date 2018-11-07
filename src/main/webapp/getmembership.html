@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Call JavaScript Function on Page Load</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="membership.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body vertical-align="top" onload="getMembershipProfile()">
+
+    <table align="top">
+        <tr>
+            <td>
+                <button onclick="getMembershipProfile()">Get Membership Profile</button>
+            </td>
+            <td>
+                <button onclick="getMembershipUsers()">Get Membership Users</button>
+            </td>
+            <td>
+                <button onclick="getMembershipGroups()">Get Memberships Groups </button>
+            </td>
+            <td>
+                <button onclick="getMembershipAccounts()">Get Membership Accounts</button>
+            </td>
+            <td>
+                <button onclick="getMembershipSubs()">Get Membership Subs</button>
+            </td>
+        </tr>
+    </table>
+
+<!--body onload="bodyOnLoad();"-->
+</body>
+</html>

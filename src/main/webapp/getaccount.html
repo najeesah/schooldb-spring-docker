@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Call JavaScript Function on Page Load</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="account.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body vertical-align="top" onload="getAccountProfile()">
+
+    <table align="top">
+        <tr>
+            <td>
+                <button onclick="getAccountProfile()">Get Account Profile</button>
+            </td>
+            <td>
+                <button onclick="getAccountUsers()">Get Account Users</button>
+            </td>
+            <td>
+                <button onclick="getAccountGroups()">Get Account Groups </button>
+            </td>
+            <td>
+                <button onclick="getAccountMemberships()">Get Account Memberships - Not Valid</button>
+            </td>
+        </tr>
+    </table>
+
+<!--body onload="bodyOnLoad();"-->
+</body>
+</html>
